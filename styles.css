@@ -11,55 +11,61 @@ body {
   background-color: var(--primary-cream);
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 375px;
-  margin: 50px auto;
-  border-radius: 8px;
-}
-
-.img-wrapper {
+.card-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
   background-color: var(--white);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 10px;
+  width: 344px;
+  height: 600px;
+  margin: 30px auto;
 }
 
-.mobile {
-  display: block;
-  max-width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.img-container {
+  height: 239px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image: url('./images/image-product-mobile.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.text-wrapper {
+.text-container {
   display: flex;
   flex-direction: column;
   background-color: white;
   padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.type,
+h2,
+.discount {
+  font-weight: 200;
+}
+
+h2,
 .desc {
   font-family: Montserrat;
   color: var(--grayish-blue);
 }
 
-.type {
+h2 {
   font-size: 12px;
   letter-spacing: 4px;
-  margin-bottom: 1rem;
 }
 
-.title {
-  font-family: Fraunces;
-  font-size: 34px;
+h1 {
+  margin-top: -1px;
 }
 
 .desc {
-  max-width: 88%;
+  max-width: 100%;
   font-size: 14px;
   line-height: 25px;
+  margin-top: -10px;
 }
 
 .price {
@@ -79,7 +85,6 @@ body {
   margin-left: 1.5rem;
   color: var(--grayish-blue);
   text-decoration: line-through;
-  font-weight: bold;
 }
 
 button {
@@ -94,4 +99,53 @@ button {
 button:hover {
   cursor: pointer;
   background-color: var(--dark-blue);
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card-container {
+    grid-template-rows: 0;
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: auto;
+  }
+
+  .img-container {
+    width: 300px;
+    height: 450px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0px;
+    background-image: url('./images/image-product-desktop.jpg');
+  }
+
+  h2 {
+    font-weight: 200;
+    margin-bottom: 25px;
+    letter-spacing: 5px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 35px;
+  }
+
+  .price {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
 }
